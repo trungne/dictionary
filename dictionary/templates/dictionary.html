@@ -3,9 +3,43 @@
 {% block body %}
 
 <h1>{{ word }}</h1>
-<h1>{{ phonetics }} </h1>
+
+{% for item in phonetics %}
+    {{ item['text'] }}:
+    <audio controls>
+        <source src={{ item['audio'] }} />
+    </audio>
+        
+    </a>
+    <br>
+{% endfor %}
 <br>
 
-<h1>{{ meanings }} </h1>
-<br>
+{% for meaning in meanings %}
+    <b>{{meaning['partOfSpeech']}}</b>:
+    {% for definition in meaning['definitions'] %}
+        {% for key, value in definition.items() %}
+
+            {% if key == "definition" %}
+                {{ value }}
+                <br>
+            {% elif key == "example" %}
+                "<i>{{ value }}</i>"
+                <br>
+            {% elif key == "synonyms" %}
+                <b>similar:</b> 
+                {% for synonym in value %}
+
+                    <a href="{{url_for('dictionary', word=synonym)}}">{{ synonym }}</a>
+                {% endfor %}
+                <br>
+            {% else %}
+
+            {% endif%}        
+        {% endfor %}
+    <br>
+    {% endfor %}
+    
+{% endfor %}
+
 {% endblock %}
