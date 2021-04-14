@@ -1,9 +1,5 @@
 body {
-    margin: 0;
-    font-family: sans-serif;
+    margin: 10;
+    font-family: Helvetica;
+    background-color: rgb(96, 123, 126);
 }
-a {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
- }
