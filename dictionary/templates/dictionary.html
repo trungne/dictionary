@@ -18,12 +18,13 @@
 <br>
 
 {% for meaning in meanings %}
-    <b>{{meaning['partOfSpeech']}}</b>:
+    <h2>{{meaning['partOfSpeech']}}</h2>
+
     {% for definition in meaning['definitions'] %}
         {% for key, value in definition.items() %}
 
             {% if key == "definition" %}
-                {{ value }}
+                <li>{{ value }}</li>
                 <br>
             {% elif key == "example" %}
                 "<i>{{ value }}</i>"
