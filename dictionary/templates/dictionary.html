@@ -18,6 +18,7 @@
 <br>
 
 {% for meaning in meanings %}
+
     <h2>{{meaning['partOfSpeech']}}</h2>
 
     {% for definition in meaning['definitions'] %}
@@ -33,7 +34,7 @@
                 <b>similar:</b> 
                 {% for synonym in value %}
 
-                    <a href="{{url_for('dictionary', word=synonym)}}">{{ synonym }}</a>
+                    <a href="/dictionary?word={{synonym}}">{{ synonym }}</a>
                 {% endfor %}
                 <br>
             {% else %}
