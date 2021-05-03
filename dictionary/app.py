@@ -19,7 +19,7 @@ def dictionary():
 
 
     word = r.json()[0]['word'] 
-    phonetics = r.json()[0]['phonetics']
+    phonetics = r.json()[0]['phonetics']    
     meanings = r.json()[0]['meanings']
     return render_template('dictionary.html', word=word, phonetics=phonetics, meanings=meanings)
 

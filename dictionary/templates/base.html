@@ -12,11 +12,13 @@
 </head>
 
 <body>
-    <form action = "/dictionary" method="get">
-        <input autocomplete="off" autofocus type="text" name="word" placeholder="Enter a word"/>
-        <p><input type="submit" value="search" /></p>
-    </form>
-
+    <div class="dict_search_bar">
+        <form action = "/dictionary" method="get">
+            <input class="text" autocomplete="off" autofocus type="text" name="word" placeholder="Enter a word"/>
+            <input class="button" type="submit" value="search" />
+        </form>
+    </div>
+    
     {% block body %} {% endblock %}
 </body>
     

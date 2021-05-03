@@ -7,15 +7,3 @@ body {
 a:visited{
     color: blue;
 }
-
-input[type=text]{
-    border: medium none;
-    display: block;
-    font-size: 20px;
-    height: 40px;
-    left: 150px;
-    line-height: 40px;
-    position: absolute;
-    top: 5px;
-    width: 590px;
-}
